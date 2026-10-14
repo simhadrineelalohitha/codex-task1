@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile · Sphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/></svg>">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar-left">
+      <div class="sidebar-header">
+        <a href="/" class="brand-badge">
+          <div class="brand-logo-icon">⚡</div>
+          <span>Sphere</span>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/" class="nav-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Home</span>
+        </a>
+        <a href="/" class="nav-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Explore</span>
+        </a>
+        <a href="#" class="nav-link" onclick="alert('You are all caught up! ✨'); return false;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span>Notifications</span>
+        </a>
+        <a href="#" id="sidebarProfileLink" class="nav-link active">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile</span>
+        </a>
+
+        <a href="/" class="sidebar-post-btn" style="text-decoration:none;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          <span>New Post</span>
+        </a>
+      </nav>
+
+      <div id="sidebarUserContainer" class="sidebar-user-pill"></div>
+    </aside>
+
+    <!-- CENTER PROFILE STREAM -->
+    <main class="feed-stream">
+      <header class="sticky-top-header">
+        <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1.25rem;">
+          <a href="/" class="btn-logout" title="Back to feed">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          </a>
+          <div>
+            <div id="topHeaderName" class="header-top-title" style="padding:0; font-size:1.1rem;">Profile</div>
+            <div id="topHeaderPostsCount" style="font-size:0.75rem; color:var(--text-muted);">Posts</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Profile Header Details -->
+      <div id="profileHeader">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Loading profile...</p>
+        </div>
+      </div>
+
+      <!-- Profile Tabbed Content -->
+      <div class="profile-tabs">
+        <div class="profile-tab active">Posts</div>
+        <div class="profile-tab" onclick="alert('Replies tab is coming soon!');">Replies</div>
+        <div class="profile-tab" onclick="alert('Media tab is coming soon!');">Media</div>
+        <div class="profile-tab" onclick="alert('Likes tab is coming soon!');">Likes</div>
+      </div>
+
+      <!-- Profile Posts -->
+      <div id="profilePosts" class="feed-list">
+        <!-- Rendered by profile.js -->
+      </div>
+    </main>
+
+    <!-- RIGHT WIDGETS SIDEBAR -->
+    <aside class="sidebar-right">
+      <div class="widget-card">
+        <h3 class="widget-title">Who to Follow</h3>
+        <div id="whoToFollowList">
+          <div class="follow-item">
+            <a href="/profile.html?username=bob_codes" class="follow-user-meta">
+              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150" class="avatar-img avatar-sm" alt="Bob">
+              <div class="follow-user-info">
+                <span class="follow-name">Bob Smith</span>
+                <span class="follow-handle">@bob_codes</span>
+              </div>
+            </a>
+            <a href="/profile.html?username=bob_codes" class="btn-pill-follow">View</a>
+          </div>
+          <div class="follow-item">
+            <a href="/profile.html?username=alice" class="follow-user-meta">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" class="avatar-img avatar-sm" alt="Alice">
+              <div class="follow-user-info">
+                <span class="follow-name">Alice Johnson</span>
+                <span class="follow-handle">@alice</span>
+              </div>
+            </a>
+            <a href="/profile.html?username=alice" class="btn-pill-follow">View</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget-card">
+        <h3 class="widget-title">Trending</h3>
+        <div class="trending-item">
+          <div>
+            <div class="trending-category">Technology · Trending</div>
+            <div class="trending-tag">#TypeScript</div>
+            <div class="trending-count">31.2K posts</div>
+          </div>
+        </div>
+        <div class="trending-item">
+          <div>
+            <div class="trending-category">Design · Trending</div>
+            <div class="trending-tag">#Glassmorphism</div>
+            <div class="trending-count">9.4K posts</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-nav-bar">
+    <a href="/" class="mobile-nav-item">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    </a>
+    <a href="/" class="mobile-nav-item">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+    <a href="/profile.html" class="mobile-nav-item active">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    </a>
+  </nav>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/feed.js"></script>
+  <script src="/js/profile.js"></script>
+</body>
+</html>

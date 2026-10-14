@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in · Sphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/></svg>">
+</head>
+<body>
+  <div class="auth-page-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <a href="/" class="brand-badge" style="justify-content:center; display:inline-flex;">
+          <div class="brand-logo-icon">⚡</div>
+          <span>Sphere</span>
+        </a>
+        <h2>Welcome back</h2>
+        <p>Log in to your account to continue</p>
+      </div>
+
+      <div class="auth-demo-box">
+        <strong>Demo Quick-Logins:</strong><br>
+        Username: <code style="color:var(--accent-cyan)">alice</code>, <code style="color:var(--accent-cyan)">bob_codes</code>, or <code style="color:var(--accent-cyan)">carol_ux</code><br>
+        Password: <code style="color:var(--accent-cyan)">password123</code>
+      </div>
+
+      <div id="authError" class="alert-danger hidden"></div>
+
+      <form id="loginForm">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="usernameOrEmail">Username or Email</label>
+          <input type="text" id="usernameOrEmail" class="form-control" placeholder="e.g. alice" required autocomplete="username" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required autocomplete="current-password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">
+          Log In
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 1.5rem; font-size: 0.88rem; color: var(--text-muted);">
+        Don't have an account? <a href="/register.html" style="color: var(--accent-primary); font-weight: 700;">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
